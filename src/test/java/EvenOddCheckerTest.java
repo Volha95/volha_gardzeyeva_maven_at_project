@@ -1,5 +1,3 @@
-package homework.day10;
-
 import org.junit.Assert;
 import org.junit.Test;
 
