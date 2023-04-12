@@ -1,0 +1,47 @@
+1. //a[text()='Mail.ru']
+   //div[@id='ph-whiteline']//a[contains(@class, 'project_current')]
+
+2. //div[@class='ph-container svelte-76guz2']//a[text()='Облако']
+   //div[@data-testid='whiteline']//a[text()='Облако']
+   //div[contains(@class, 'whiteline')]//a[text()='Облако']
+
+3. //div[contains(@class, 'toolbar__content')]/img
+   //img[@class='i-valign-middle']
+
+4. //span[contains(@class, 'toolbar__btn_primary')]
+   //span[text()='Узнать']
+   //div[contains(@class, 'toolbar__content')]/span[2]
+
+5. //a[@data-testid='logged-out-email']
+   //div[contains(@class, 'mailbox-services')]/a[1]
+
+6. //div[contains(@class, 'mailbox')]//button[text()='Войти']
+   //button[@data-testid='enter-mail-primary']
+
+7. //div[contains(@class, 'footer_logged-out')]
+   //a[@data-testid='mailbox-create-link']
+
+8. //input[@role='combobox']
+   //input[@aria-label='Запрос']
+   //div[text()='Поиск Яндекса']
+
+9. //a[contains(@data-testid, "lady")]
+   //a[text()='Леди']
+
+10. //ul[@data-testid='news-content']/li[2]
+    //ul[contains(@class, 'tabs-content')]/li[2]
+
+11. //a[text()='Регистрация']
+    //div[contains(@class, 'ph-auth')]/a
+
+12. //div[contains(@class, 'header')]//button[text()='Войти']
+    //div[contains(@class, 'auth')]/button
+
+13. //button[text()='Найти']
+    //button[@class='search-arrow__button']
+
+14. //a[@data-testid='weather-more']
+    //a[contains(@class, 'weather__arrow')]
+
+15. //span[contains(@title, 'ощущается как')]
+    //span[@data-testid="weather-temp"]
