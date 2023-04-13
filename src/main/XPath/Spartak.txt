@@ -1,0 +1,37 @@
+1. //div[@class='header__logo']
+   //div[@class='top-h-row']/descendant::div[2]
+
+2. //div[@class='content_menu']//a[@href='/products/Impresso/']
+   //div[@class='content_menu']//a[text()='Импрессо']
+
+3. //a[@class='has_child']//span[text()='Информация для партнеров']
+   //div[@class='content_menu']//a[@href='/partners/']/span
+
+4. //i[@class='search fa search-btn lupa']
+   //div[@class='header__search']//i
+   //*[contains(@class, 'lupa')]
+
+5. //span[@class='header__eye']
+   //*[contains(@class, 'header__eye')]
+
+6. //a[text()='Ru']
+   //div[@class='header__lang']/a[@href='/']
+
+7. //a[text()='Ch']
+   //a[@href='/cn/']
+
+8. //a[text()='Скачать каталог']
+   //a[@class='download-catalog']
+
+9. //ol//a[text()='2']
+   //ol/li[2]/a
+
+10. //div[@class='top_slider_wrapp']/ul[@class='social_list']/li[2]
+    //div[@class='top_slider_wrapp']//a[@href='https://vk.com/spartakby']
+
+11. //div[@class='top_slider_wrapp']//a[@href='https://www.youtube.com/channel/UC2xYusMBxs4XkwoPotvTw4A']
+    //div[@class='top_slider_wrapp']/ul[@class='social_list']/li[6]
+    //div[@class='top_slider_wrapp']//a[contains(@href, 'youtube')]
+
+12. //a[@class='flex-next']
+    //li[@class='flex-nav-next']/a
