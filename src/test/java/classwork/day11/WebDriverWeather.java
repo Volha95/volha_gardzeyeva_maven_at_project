@@ -13,13 +13,9 @@ public class WebDriverWeather {
         driver.get("https://www.google.com/");
         driver.manage().window().maximize();
         WebElement element = driver.findElement(By.name("q"));
-
-//        element.sendKeys("погода минск");
-//        driver.findElement(By.xpath("//ul[@role='listbox']/li[1]")).click();
-
         element.sendKeys("погода минск", Keys.ENTER);
-        driver.findElement(By.xpath("//div[@aria-label='пятніца']")).click();
-        WebElement el = driver.findElement(By.xpath("//*[contains(@aria-label, '11°Celsius пятніца 12:00')]"));
+        driver.findElement(By.xpath("//div[@data-wob-di=\"1\"]")).click();
+        WebElement el = driver.findElement(By.xpath("//*[contains(@aria-label, '12:00')]"));
         String str = el.getAttribute("aria-label");
         String[] array = str.split("Celsius");
         System.out.println(array[0] + " завтра в 12:00");
