@@ -43,9 +43,7 @@ public class BookingRatingTest {
         driver.findElement(By.xpath("//div[@data-testid='property-card'][1]//div[@data-testid='title']")).click();
 
         ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
-        String oldTab = driver.getWindowHandle();
-        newTab.remove(oldTab);
-        driver.switchTo().window(newTab.get(0));
+        driver.switchTo().window(newTab.get(1));
 
         WebElement scoreElement = driver.findElement(By.xpath("//div[@data-testid='review-score-right-component']/div[contains(@aria-label, 'Scored')]"));
         double score = Double.parseDouble(scoreElement.getText());
