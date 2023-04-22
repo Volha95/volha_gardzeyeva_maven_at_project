@@ -45,8 +45,9 @@ public class W3SchoolsWebDriverTest {
                 .sendKeys(Keys.ENTER)
                 .build()
                 .perform();
+        List<WebElement> allResults = driver.findElements(By.xpath("//h3"));
         List<WebElement> listOfElements = driver.findElements(By.xpath("//h3[contains(text(), 'tutorial') or contains(text(), 'Tutorial') or contains(text(), 'TUTORIAL')]"));
-        Assert.assertEquals("the result doesn't contain the word 'tutorial'", 8, listOfElements.size());
+        Assert.assertEquals("the result doesn't contain the word 'tutorial'", allResults.size(), listOfElements.size());
     }
 
     @After
