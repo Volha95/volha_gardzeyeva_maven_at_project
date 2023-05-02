@@ -1,5 +1,6 @@
 package classwork.day12;
 
+import classwork.day13.Driver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,14 +13,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class HotelsWebDriverTest {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = Driver.getWebDriver();
 
     @Before
     public void dataCreation() {
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
         driver.get("https://www.booking.com/");
     }
 

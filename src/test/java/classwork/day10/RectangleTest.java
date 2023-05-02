@@ -1,9 +1,11 @@
+package classwork.day10;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 public class RectangleTest {
 
-    Rectangle rectangle = new Rectangle(3.5, 2.1);
+    classwork.day10.Rectangle rectangle = new classwork.day10.Rectangle(3.5, 2.1);
 
     @Test
     public void rectangleObjectTest() {
