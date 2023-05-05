@@ -1,14 +1,16 @@
 package pages;
 
-import classwork.day13.Driver;
+import driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class PreconditionMyMailbox {
-    WebDriver driver = Driver.getWebDriver();
+    private final By INCOMING_MESSAGES = By.xpath("//a[@data-testid='unread-messages']");
+    private final By FIRST_LETTER = By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/a[1]");
 
     public void findEmail() {
-        driver.get("https://mail.ru/");
-        driver.findElement(By.xpath("")).click();
+        Driver.getWebDriver().get("https://mail.ru/");
+        Driver.getWebDriver().findElement(INCOMING_MESSAGES).click();
+        Driver.getWebDriver().findElement(FIRST_LETTER).click();
+
     }
 }

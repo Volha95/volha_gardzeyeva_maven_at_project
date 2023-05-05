@@ -1,6 +1,6 @@
 package classwork.day12;
 
-import classwork.day13.Driver;
+import driver.Driver;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

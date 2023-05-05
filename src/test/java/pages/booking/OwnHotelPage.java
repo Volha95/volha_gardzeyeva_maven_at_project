@@ -1,6 +1,6 @@
 package pages.booking;
 
-import classwork.day13.Driver;
+import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

@@ -1,9 +1,8 @@
-package classwork.day13;
+package driver;
 
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
-import java.util.Optional;
 
 public class Driver {
     private static WebDriver driver;
@@ -26,5 +25,9 @@ public class Driver {
 
     public static void destroy() {
         driver.quit();
+    }
+
+    public static void close() {
+        driver.close();
     }
 }

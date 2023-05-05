@@ -1,7 +1,6 @@
 package tests.booking;
 
-import classwork.day13.Driver;
-import org.junit.After;
+import driver.Driver;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,10 +9,12 @@ import org.openqa.selenium.interactions.Actions;
 import pages.booking.BookingMainPage;
 import pages.booking.FoundHotelsPage;
 import pages.booking.OwnHotelPage;
+import pages.booking.RegistrationPage;
 
-public class BookingTests {
+public class BookingJUnitTests {
     BookingMainPage bookingMainPage = new BookingMainPage();
     FoundHotelsPage foundHotelsPage = new FoundHotelsPage();
+    RegistrationPage registrationPage = new RegistrationPage();
     OwnHotelPage ownHotelPage = new OwnHotelPage();
     Actions actions = new Actions(Driver.getWebDriver());
 
@@ -23,14 +24,15 @@ public class BookingTests {
         bookingMainPage.dismissInfo();
     }
 
-    @After
-    public void closingPage() {
-        Driver.destroy();
-    }
+//    @After
+//    public void closingPage() {
+//        Driver.destroy();
+//    }
 
     @Test
     public void maxPricePerNight() {
         bookingMainPage.findHotel("Париж");
+        bookingMainPage.datesInput();
         bookingMainPage.adultsInput();
         bookingMainPage.adultsInput();
         bookingMainPage.roomsInput();
@@ -50,6 +52,7 @@ public class BookingTests {
     @Test
     public void makeRedTitle() {
         bookingMainPage.findHotel("Berlin");
+        bookingMainPage.datesInput();
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", foundHotelsPage.getTenthHotel());
@@ -75,6 +78,7 @@ public class BookingTests {
     @Test
     public void hotelsPresence() {
         bookingMainPage.findHotel("Berlin");
+        bookingMainPage.datesInput();
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         Assert.assertTrue("There are no hotels for the entered dates", foundHotelsPage.getPropertyCard().size() > 0);
@@ -83,6 +87,7 @@ public class BookingTests {
     @Test
     public void hotelRatingMax() {
         bookingMainPage.findHotel("Berlin");
+        bookingMainPage.datesInput();
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         foundHotelsPage.filterMaxRating();
@@ -91,4 +96,12 @@ public class BookingTests {
         double score = Double.parseDouble(ownHotelPage.findScoreElement().getText());
         Assert.assertTrue("hotel rating less than 9", score >= 9.0);
     }
+
+    @Test
+    public void registerNewUser() {
+        bookingMainPage.registerClick();
+        registrationPage.registration();
+
+    }
+
 }

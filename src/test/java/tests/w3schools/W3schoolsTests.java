@@ -1,6 +1,6 @@
 package tests.w3schools;
 
-import classwork.day13.Driver;
+import driver.Driver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
