@@ -1,5 +1,8 @@
+package classwork.day10;
+
 import org.junit.Assert;
 import org.junit.Test;
+
 
 public class EvenOddCheckerTest {
 

@@ -1,0 +1,9 @@
+name: All Test Suite
+tests:
+    -name: maxPricePerNight
+        makeRedTitle 
+        checkingTooltipCurrency 
+        checkingTooltipLanguage
+        hotelsPresence
+        hotelRatingMax 
+        registerNewUser

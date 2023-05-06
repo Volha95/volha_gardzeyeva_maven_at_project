@@ -1,3 +1,5 @@
+package classwork.day10;
+
 public class EvenOddChecker {
 
     public static boolean check(int num) {
