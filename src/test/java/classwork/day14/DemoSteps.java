@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 
 public class DemoSteps {
-    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DemoSteps.class.getName());
     @Given("I open demoG7 site")
     public void iOpenDemoGSite() {
         LOGGER.info("I opened the site");

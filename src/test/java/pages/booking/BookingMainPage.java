@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BookingMainPage {
-    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(BookingMainPage.class.getName());
 
     private final String URL = "https://www.booking.com/";
 

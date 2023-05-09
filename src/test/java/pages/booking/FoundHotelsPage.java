@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoundHotelsPage {
-    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(FoundHotelsPage.class.getName());
     private final By SPINNER = By.xpath("//div[@data-testid='overlay-spinner']");
     private final By SORT_DROPDOWN = By.xpath("//button[@data-testid='sorters-dropdown-trigger']");
     private final By MIN_PRICE_SORT = By.xpath("//button[@data-id='price']");

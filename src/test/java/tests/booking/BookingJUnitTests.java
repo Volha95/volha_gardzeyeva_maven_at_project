@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.Driver;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,15 +25,16 @@ public class BookingJUnitTests {
         bookingMainPage.dismissInfo();
     }
 
-//    @After
-//    public void closingPage() {
-//        Driver.destroy();
-//    }
+    @After
+    public void closingPage() {
+        Driver.destroy();
+    }
 
     @Test
     public void maxPricePerNight() {
         bookingMainPage.findHotel("Париж");
-        bookingMainPage.datesInput();
+        bookingMainPage.inputFirstDate(10, "May", 2023);
+        bookingMainPage.inputSecondDate(18, "May", 2023);
         bookingMainPage.adultsInput();
         bookingMainPage.adultsInput();
         bookingMainPage.roomsInput();
@@ -52,7 +54,8 @@ public class BookingJUnitTests {
     @Test
     public void makeRedTitle() {
         bookingMainPage.findHotel("Berlin");
-        bookingMainPage.datesInput();
+        bookingMainPage.inputFirstDate(10, "May", 2023);
+        bookingMainPage.inputSecondDate(18, "May", 2023);
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", foundHotelsPage.getTenthHotel());
@@ -78,7 +81,8 @@ public class BookingJUnitTests {
     @Test
     public void hotelsPresence() {
         bookingMainPage.findHotel("Berlin");
-        bookingMainPage.datesInput();
+        bookingMainPage.inputFirstDate(10, "May", 2023);
+        bookingMainPage.inputSecondDate(18, "May", 2023);
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         Assert.assertTrue("There are no hotels for the entered dates", foundHotelsPage.getPropertyCard().size() > 0);
@@ -87,7 +91,8 @@ public class BookingJUnitTests {
     @Test
     public void hotelRatingMax() {
         bookingMainPage.findHotel("Berlin");
-        bookingMainPage.datesInput();
+        bookingMainPage.inputFirstDate(10, "May", 2023);
+        bookingMainPage.inputSecondDate(18, "May", 2023);
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         foundHotelsPage.filterMaxRating();

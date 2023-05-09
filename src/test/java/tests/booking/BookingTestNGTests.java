@@ -37,6 +37,8 @@ public class BookingTestNGTests {
     @Test
     public void maxPricePerNight() {
         bookingMainPage.findHotel("Париж");
+        bookingMainPage.inputFirstDate(10, "May", 2023);
+        bookingMainPage.inputSecondDate(18, "May", 2023);
         bookingMainPage.adultsInput();
         bookingMainPage.adultsInput();
         bookingMainPage.roomsInput();
