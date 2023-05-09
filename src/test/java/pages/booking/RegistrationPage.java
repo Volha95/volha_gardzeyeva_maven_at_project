@@ -1,10 +1,13 @@
 package pages.booking;
 
+import classwork.day11.WebDriverWeather;
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import pages.trashmail.TrashmailPage;
 
 public class RegistrationPage {
+    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
     private final By EMAIL_INPUT_FIELD = By.id("username");
     private final By CONTINUE = By.xpath("//div[@class='hidden-password-input-container']/following-sibling::div/button[1]");
     private final By NEW_PASSWORD_FIELD = By.xpath("//input[@id='new_password']");

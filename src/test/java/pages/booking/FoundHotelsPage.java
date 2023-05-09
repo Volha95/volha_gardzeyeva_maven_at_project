@@ -1,6 +1,8 @@
 package pages.booking;
 
+import classwork.day11.WebDriverWeather;
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoundHotelsPage {
+    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
     private final By SPINNER = By.xpath("//div[@data-testid='overlay-spinner']");
     private final By SORT_DROPDOWN = By.xpath("//button[@data-testid='sorters-dropdown-trigger']");
     private final By MIN_PRICE_SORT = By.xpath("//button[@data-id='price']");

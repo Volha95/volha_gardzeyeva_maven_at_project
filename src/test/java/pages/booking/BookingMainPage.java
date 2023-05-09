@@ -1,10 +1,13 @@
 package pages.booking;
 
+import classwork.day11.WebDriverWeather;
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BookingMainPage {
+    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
 
     private final String URL = "https://www.booking.com/";
 
@@ -12,8 +15,6 @@ public class BookingMainPage {
 
     private final By CITY_AREA = By.xpath("//input[@placeholder='Where are you going?']");
     private final By DATES_CONTAINER = By.xpath("//div[@data-testid='searchbox-dates-container']");
-    private final By FIRST_DATE = By.xpath("//span[@aria-label='3 May 2023']");
-    private final By SECOND_DATE = By.xpath("//span[@aria-label='10 May 2023']");
     private final By SEARCH_BUTTON = By.xpath("//span[text()='Search']");
     private final By PEOPLE_ROOMS_CONTAINER = By.xpath("//button[@data-testid='occupancy-config']");
     private final By ADULTS = By.xpath("//input[@id='group_adults']/following-sibling::div/button[2]");
@@ -33,10 +34,14 @@ public class BookingMainPage {
 
     }
 
-    public void datesInput() {
+    public void inputFirstDate(int day, String month, int year) {
         Driver.getWebDriver().findElement(DATES_CONTAINER).click();
-        Driver.getWebDriver().findElement(FIRST_DATE).click();
-        Driver.getWebDriver().findElement(SECOND_DATE).click();
+        String firstDate = "//span[@aria-label='%d %s %d']";
+        Driver.getWebDriver().findElement(By.xpath(String.format(firstDate, day, month, year))).click();
+    }
+    public void inputSecondDate(int day, String month, int year) {
+        String secondDate = "//span[@aria-label='%d %s %d']";
+        Driver.getWebDriver().findElement(By.xpath(String.format(secondDate, day, month, year))).click();
     }
 
     public void adultsInput() {
