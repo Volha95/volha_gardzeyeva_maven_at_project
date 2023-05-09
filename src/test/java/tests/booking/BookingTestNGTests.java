@@ -51,6 +51,7 @@ public class BookingTestNGTests {
         double hotelPrice = Double.parseDouble(priceHotelNumberOnly);
         double nightPrice = Double.parseDouble(priceNightNumberOnly);
         Assert.assertTrue(hotelPrice / 7 >= nightPrice, "the cost of a night in a hotel is less than the minimum");
+        LOGGER.debug("Test passed");
     }
 
     @Test
@@ -64,6 +65,7 @@ public class BookingTestNGTests {
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].style.backgroundColor = 'green'", foundHotelsPage.getTenthHotel());
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].style.color = 'red'", foundHotelsPage.getTenthHotelTitle());
         Assert.assertEquals(foundHotelsPage.findRedElement(), "color: red;", "hotel name isn't red");
+        LOGGER.debug("Test passed");
     }
 
     @Test
@@ -71,6 +73,7 @@ public class BookingTestNGTests {
         actions.moveToElement(bookingMainPage.getCurrency());
         actions.perform();
         Assert.assertTrue(bookingMainPage.getCurrencyTooltip().isDisplayed(), "tooltip isn't displayed");
+        LOGGER.debug("Test passed");
     }
 
     @Test
@@ -78,6 +81,7 @@ public class BookingTestNGTests {
         actions.moveToElement(bookingMainPage.getLanguage());
         actions.perform();
         Assert.assertTrue(bookingMainPage.getLanguageTooltip().isDisplayed(), "tooltip isn't displayed");
+        LOGGER.debug("Test passed");
     }
 
     @Test
@@ -86,6 +90,7 @@ public class BookingTestNGTests {
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         Assert.assertTrue(foundHotelsPage.getPropertyCard().size() > 0, "There are no hotels for the entered dates");
+        LOGGER.debug("Test passed");
     }
 
     @Test
@@ -98,6 +103,7 @@ public class BookingTestNGTests {
         foundHotelsPage.openFirstHotelPage();
         double score = Double.parseDouble(ownHotelPage.findScoreElement().getText());
         Assert.assertTrue(score >= 9.0, "hotel rating less than 9");
+        LOGGER.debug("Test passed");
     }
 
     @Test

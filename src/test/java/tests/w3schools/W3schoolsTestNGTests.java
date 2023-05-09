@@ -43,5 +43,6 @@ public class W3schoolsTestNGTests {
                 .build()
                 .perform();
         Assert.assertEquals(googleMainPage.getHeadlines().size(), googleMainPage.getTutorialHeadlines().size(), "the result doesn't contain the word 'tutorial'");
+        LOGGER.debug("Test passed");
     }
 }

@@ -31,17 +31,20 @@ public class BookingCucumberTests {
     public void openSite() {
         bookingMainPage.siteLoad();
         bookingMainPage.dismissInfo();
+        LOGGER.debug("Test passed");
     }
 
     @When("I input the city")
     public void iInputThe() {
         bookingMainPage.findHotel("Berlin");
+        LOGGER.debug("Test passed");
     }
 
     @And("Input dates")
     public void inputDates() {
         bookingMainPage.inputFirstDate(10, "May", 2023);
         bookingMainPage.inputSecondDate(18, "May", 2023);
+        LOGGER.debug("Test passed");
     }
 
     @And("Input adults and rooms")
@@ -49,18 +52,21 @@ public class BookingCucumberTests {
         bookingMainPage.adultsInput();
         bookingMainPage.adultsInput();
         bookingMainPage.roomsInput();
+        LOGGER.debug("Test passed");
     }
 
     @And("Click on button search")
     public void clickOnButtonSearch() {
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
+        LOGGER.debug("Test passed");
     }
 
     @And("Sort the hotels")
     public void sortTheHotels() {
         foundHotelsPage.sortDropdownClick();
         foundHotelsPage.sortFromCheapest();
+        LOGGER.debug("Test passed");
     }
 
     @Then("Check the cost of the night")
@@ -72,5 +78,6 @@ public class BookingCucumberTests {
         double hotelPrice = Double.parseDouble(priceHotelNumberOnly);
         double nightPrice = Double.parseDouble(priceNightNumberOnly);
         Assert.assertTrue("the cost of a night in a hotel is less than the minimum", hotelPrice / 7 >= nightPrice);
+        LOGGER.debug("Test passed");
     }
 }

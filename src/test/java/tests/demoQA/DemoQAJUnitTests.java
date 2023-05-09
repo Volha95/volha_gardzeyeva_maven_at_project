@@ -34,5 +34,6 @@ public class DemoQAJUnitTests {
         demoQASelectPage.selectMultiselect();
         Select selectCars = new Select(demoQASelectPage.selectAnyCar());
         selectCars.selectByIndex(2);
+        LOGGER.debug("Test passed");
     }
 }
