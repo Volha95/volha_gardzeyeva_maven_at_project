@@ -1,8 +1,8 @@
 package tests.booking;
 
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
@@ -13,6 +13,7 @@ import pages.booking.FoundHotelsPage;
 import pages.booking.OwnHotelPage;
 
 public class BookingTestNGTests {
+    private static final Logger LOGGER = Logger.getLogger(BookingTestNGTests.class.getName());
     BookingMainPage bookingMainPage = new BookingMainPage();
     FoundHotelsPage foundHotelsPage = new FoundHotelsPage();
     OwnHotelPage ownHotelPage = new OwnHotelPage();
@@ -20,18 +21,15 @@ public class BookingTestNGTests {
 
     @BeforeMethod
     public void loadingPage() {
+        LOGGER.info("Test started");
         bookingMainPage.siteLoad();
         bookingMainPage.dismissInfo();
     }
 
-    @AfterClass
+    @AfterMethod
     public void driverClose() {
         Driver.destroy();
-    }
-
-    @AfterMethod
-    public void closingPage() {
-        Driver.close();
+        LOGGER.info("Test finished");
     }
 
     @Test
@@ -58,12 +56,14 @@ public class BookingTestNGTests {
     @Test
     public void makeRedTitle() {
         bookingMainPage.findHotel("Berlin");
+        bookingMainPage.inputFirstDate(15, "May", 2023);
+        bookingMainPage.inputSecondDate(20, "May", 2023);
         bookingMainPage.searchButtonClick();
         foundHotelsPage.spinnerWait();
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", foundHotelsPage.getTenthHotel());
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].style.backgroundColor = 'green'", foundHotelsPage.getTenthHotel());
         ((JavascriptExecutor) Driver.getWebDriver()).executeScript("arguments[0].style.color = 'red'", foundHotelsPage.getTenthHotelTitle());
-        Assert.assertEquals("hotel name isn't red", "color: red;", foundHotelsPage.findRedElement());
+        Assert.assertEquals(foundHotelsPage.findRedElement(), "color: red;", "hotel name isn't red");
     }
 
     @Test

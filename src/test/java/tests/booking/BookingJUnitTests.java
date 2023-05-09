@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,6 +14,7 @@ import pages.booking.OwnHotelPage;
 import pages.booking.RegistrationPage;
 
 public class BookingJUnitTests {
+    private static final Logger LOGGER = Logger.getLogger(BookingJUnitTests.class.getName());
     BookingMainPage bookingMainPage = new BookingMainPage();
     FoundHotelsPage foundHotelsPage = new FoundHotelsPage();
     RegistrationPage registrationPage = new RegistrationPage();
@@ -21,6 +23,7 @@ public class BookingJUnitTests {
 
     @Before
     public void loadingPage() {
+        LOGGER.info("Test started");
         bookingMainPage.siteLoad();
         bookingMainPage.dismissInfo();
     }
@@ -28,6 +31,7 @@ public class BookingJUnitTests {
     @After
     public void closingPage() {
         Driver.destroy();
+        LOGGER.info("Test finished");
     }
 
     @Test

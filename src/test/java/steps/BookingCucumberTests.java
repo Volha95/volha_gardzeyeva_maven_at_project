@@ -1,6 +1,5 @@
 package steps;
 
-import classwork.day11.WebDriverWeather;
 import driver.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,16 +13,18 @@ import pages.booking.BookingMainPage;
 import pages.booking.FoundHotelsPage;
 
 public class BookingCucumberTests {
-    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(BookingCucumberTests.class.getName());
     BookingMainPage bookingMainPage = new BookingMainPage();
     FoundHotelsPage foundHotelsPage = new FoundHotelsPage();
     @Before
     public void getDriver() {
+        LOGGER.info("Test started");
         Driver.getWebDriver();
     }
     @After
     public void closeDriver() {
         Driver.destroy();
+        LOGGER.info("Test finished");
     }
 
     @Given("I open booking site")
