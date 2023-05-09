@@ -1,10 +1,13 @@
 package pages.demoQA;
 
+import classwork.day11.WebDriverWeather;
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class DemoQASelectPage {
+    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
 
     private final By SELECT_OPTION = By.xpath("//div[@id='withOptGroup']");
     private final By GROUP1_OPTION2 = By.xpath("//div[text()='Group 1, option 2']");
