@@ -8,6 +8,9 @@ public class Driver {
     private static WebDriver driver;
 
     public static Config config;
+    public static void setConfig(Config theConfig) {
+        config = null == theConfig ? Config.valueOf(System.getProperty("CONFIG")) : theConfig;
+    }
 
     public static void setTimeouts(int seconds) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
@@ -25,6 +28,7 @@ public class Driver {
 
     public static void destroy() {
         driver.quit();
+        driver = null;
     }
 
     public static void close() {
