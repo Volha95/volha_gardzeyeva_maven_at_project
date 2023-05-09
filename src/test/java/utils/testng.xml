@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suites">
+    <test verbose="2" preserve-order="true" name="C:/Users/user/IdeaProjects/volha_gardzeyeva_maven_at_project/src/test/java/tests">
+        <classes>
+            <class name="tests.booking.BookingTestNGTests">
+                <methods>
+                    <include name="maxPricePerNight"/>
+                    <include name="makeRedTitle"/>
+                    <include name="checkingTooltipCurrency"/>
+                    <include name="checkingTooltipLanguage"/>
+                    <include name="hotelsPresence"/>
+                    <include name="hotelRatingMax"/>
+                    <include name="registerNewUser"/>
+                </methods>
+            </class>
+            <class name="tests.demoQA.DemoQATestNGTests">
+                <methods>
+                    <include name="selectOptions"/>
+                </methods>
+            </class>
+            <class name="tests.w3schools.W3schoolsTestNGTests">
+                <methods>
+                    <include name="tutorialTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
