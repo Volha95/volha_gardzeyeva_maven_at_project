@@ -4,6 +4,7 @@ import classwork.day11.WebDriverWeather;
 import driver.Driver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoundHotelsPage {
+    WebDriver driver = Driver.getWebDriver();
     private static final Logger LOGGER = Logger.getLogger(FoundHotelsPage.class.getName());
     private final By SPINNER = By.xpath("//div[@data-testid='overlay-spinner']");
     private final By SORT_DROPDOWN = By.xpath("//button[@data-testid='sorters-dropdown-trigger']");
@@ -28,52 +30,52 @@ public class FoundHotelsPage {
 
 
     public void spinnerWait() {
-        Driver.getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
-        new WebDriverWait(Driver.getWebDriver(), Duration.ofSeconds(10)).until(
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
                 ExpectedConditions.invisibilityOfElementLocated(SPINNER));
-        Driver.getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public void sortDropdownClick() {
-        Driver.getWebDriver().findElement(SORT_DROPDOWN).click();
+        driver.findElement(SORT_DROPDOWN).click();
     }
 
     public void sortFromCheapest() {
-        Driver.getWebDriver().findElement(MIN_PRICE_SORT).click();
+        driver.findElement(MIN_PRICE_SORT).click();
     }
 
     public WebElement getFirstHotelPrice() {
-        return Driver.getWebDriver().findElement(FIRST_HOTEL_PRICE);
+        return driver.findElement(FIRST_HOTEL_PRICE);
     }
 
     public WebElement getPricePerNight() {
-        return Driver.getWebDriver().findElement(PRICE_PER_NIGHT_FILTER);
+        return driver.findElement(PRICE_PER_NIGHT_FILTER);
     }
 
     public WebElement getTenthHotel() {
-        return Driver.getWebDriver().findElement(TENTH_HOTEL);
+        return driver.findElement(TENTH_HOTEL);
     }
 
     public WebElement getTenthHotelTitle() {
-        return Driver.getWebDriver().findElement(TENTH_HOTEL_TITLE);
+        return driver.findElement(TENTH_HOTEL_TITLE);
     }
 
     public String findRedElement() {
-        WebElement redElement = Driver.getWebDriver().findElement(TENTH_HOTEL_RED_TITLE);
+        WebElement redElement = driver.findElement(TENTH_HOTEL_RED_TITLE);
         return redElement.getAttribute("style");
     }
 
     public List<WebElement> getPropertyCard() {
-        return Driver.getWebDriver().findElements(PROPERTY_CARD);
+        return driver.findElements(PROPERTY_CARD);
     }
 
     public void filterMaxRating() {
-        Driver.getWebDriver().findElement(MAX_RATING_FILTER).click();
+        driver.findElement(MAX_RATING_FILTER).click();
     }
 
     public void openFirstHotelPage() {
-        Driver.getWebDriver().findElement(FIRST_HOTEL_TITLE).click();
-        ArrayList<String> newTab = new ArrayList<>(Driver.getWebDriver().getWindowHandles());
-        Driver.getWebDriver().switchTo().window(newTab.get(1));
+        driver.findElement(FIRST_HOTEL_TITLE).click();
+        ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(newTab.get(1));
     }
 }

@@ -1,12 +1,13 @@
 package pages.demoQA;
 
-import classwork.day11.WebDriverWeather;
 import driver.Driver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class DemoQASelectPage {
+    WebDriver driver = Driver.getWebDriver();
     private static final Logger LOGGER = Logger.getLogger(DemoQASelectPage.class.getName());
 
     private final By SELECT_OPTION = By.xpath("//div[@id='withOptGroup']");
@@ -19,26 +20,26 @@ public class DemoQASelectPage {
     private final By SELECT_CARS = By.id("cars");
 
     public void goToSelectMenu() {
-        Driver.getWebDriver().get("https://demoqa.com/select-menu");
+        driver.get("https://demoqa.com/select-menu");
     }
 
     public void selectAnyValueOption() {
-        Driver.getWebDriver().findElement(SELECT_OPTION).click();
-        Driver.getWebDriver().findElement(GROUP1_OPTION2).click();
+        driver.findElement(SELECT_OPTION).click();
+        driver.findElement(GROUP1_OPTION2).click();
     }
     public void selectAnyOneTitle() {
-        Driver.getWebDriver().findElement(SELECT_TITLE).click();
-        Driver.getWebDriver().findElement(SELECT_MRS).click();
+        driver.findElement(SELECT_TITLE).click();
+        driver.findElement(SELECT_MRS).click();
     }
     public WebElement selectOldMenu() {
-       return Driver.getWebDriver().findElement(OLD_SELECT_MENU);
+       return driver.findElement(OLD_SELECT_MENU);
     }
     public void selectMultiselect() {
-        Driver.getWebDriver().findElement(MULTISELECT).click();
-        Driver.getWebDriver().findElement(SELECT_BLUE).click();
+        driver.findElement(MULTISELECT).click();
+        driver.findElement(SELECT_BLUE).click();
     }
     public WebElement selectAnyCar() {
-        return Driver.getWebDriver().findElement(SELECT_CARS);
+        return driver.findElement(SELECT_CARS);
     }
 
 }
