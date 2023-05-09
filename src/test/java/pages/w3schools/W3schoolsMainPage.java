@@ -1,6 +1,5 @@
 package pages.w3schools;
 
-import classwork.day11.WebDriverWeather;
 import driver.Driver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
