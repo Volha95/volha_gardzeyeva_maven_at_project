@@ -1,9 +1,11 @@
-name: All Test Suite
+name: YAML Test Suite
+parallel: classes
 tests:
-    -name: maxPricePerNight
-        makeRedTitle 
-        checkingTooltipCurrency 
-        checkingTooltipLanguage
-        hotelsPresence
-        hotelRatingMax 
-        registerNewUser
+    -name: Booking tests
+    classes:
+        -BookingTestNGTests
+        -DemoQATestNGTests
+        -W3schoolsTestNGTests
+
+
+
