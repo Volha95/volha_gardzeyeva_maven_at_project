@@ -6,13 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty"},
-        glue = {""},
-        features = {
-
-        }
+        plugin = {"pretty", "summary"},
+        glue = {"steps"},
+        features = {"src/test/resources/features/booking.feature"}
 
 )
 
-public class BookingCucumberRunnerTest {
+public class BookingCucumberRunner {
 }

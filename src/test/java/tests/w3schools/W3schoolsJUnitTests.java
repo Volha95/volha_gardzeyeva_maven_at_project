@@ -11,7 +11,7 @@ import pages.google.GoogleMainPage;
 import pages.w3schools.W3schoolsMainPage;
 
 
-public class W3schoolsTests {
+public class W3schoolsJUnitTests {
     Actions make = new Actions(Driver.getWebDriver());
     W3schoolsMainPage w3schoolsMainPage = new W3schoolsMainPage();
     GoogleMainPage googleMainPage = new GoogleMainPage();

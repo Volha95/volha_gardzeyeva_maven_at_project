@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.support.ui.Select;
 import pages.demoQA.DemoQASelectPage;
 
-public class DemoQATests {
+public class DemoQAJUnitTests {
     DemoQASelectPage demoQASelectPage = new DemoQASelectPage();
 
     @Before
