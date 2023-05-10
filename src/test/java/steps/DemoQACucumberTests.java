@@ -14,19 +14,16 @@ import pages.demoQA.DemoQASelectPage;
 public class DemoQACucumberTests {
     private static final Logger LOGGER = Logger.getLogger(DemoQACucumberTests.class.getName());
     DemoQASelectPage demoQASelectPage = new DemoQASelectPage();
-
     @Before
     public void getDriver() {
         LOGGER.info("Test started");
         Driver.getWebDriver();
     }
-
     @After
     public void closeDriver() {
         Driver.destroy();
         LOGGER.info("Test finished");
     }
-
     @Given("I open demoQA-select page")
     public void openSite() {
         demoQASelectPage.goToSelectMenu();
