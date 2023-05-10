@@ -12,6 +12,7 @@ public class OwnHotelPage {
     private final By SCORE_ELEMENT = By.xpath("//div[@data-testid='review-score-right-component']/div[contains(@aria-label, 'Scored')]");
 
     public WebElement findScoreElement() {
+        LOGGER.trace("Find score element, SCORE_ELEMENT locator: //div[@data-testid='review-score-right-component']/div[contains(@aria-label, 'Scored')]");
         return driver.findElement(SCORE_ELEMENT);
     }
 }
