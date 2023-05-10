@@ -13,13 +13,16 @@ public class W3schoolsMainPage {
 
     public void siteLoad() {
         driver.get("https://www.w3schools.com/java/");
+        LOGGER.trace("Go to w3schools site 'https://www.w3schools.com/java/'");
     }
 
     public WebElement getTutorialText() {
+        LOGGER.trace("Find word 'Tutorial', TUTORIAL_TEXT locator: //span[text()='Tutorial']");
         return driver.findElement(TUTORIAL_TEXT);
     }
 
     public void navigateGoogle() {
         driver.navigate().to("https://www.google.com/");
+        LOGGER.trace("Go to Google 'https://www.google.com/'");
     }
 }
