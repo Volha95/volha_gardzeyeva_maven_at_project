@@ -21,24 +21,33 @@ public class DemoQASelectPage {
 
     public void goToSelectMenu() {
         driver.get("https://demoqa.com/select-menu");
+        LOGGER.trace("Go to demoqa site 'https://demoqa.com/select-menu'");
     }
 
     public void selectAnyValueOption() {
         driver.findElement(SELECT_OPTION).click();
+        LOGGER.trace("Click on select option button, SELECT_OPTION locator: //div[@id='withOptGroup']");
         driver.findElement(GROUP1_OPTION2).click();
+        LOGGER.trace("Click on option, GROUP1_OPTION2 locator: //div[text()='Group 1, option 2']");
     }
     public void selectAnyOneTitle() {
         driver.findElement(SELECT_TITLE).click();
+        LOGGER.trace("Click on select title, SELECT_TITLE locator: //div[@id='selectOne']");
         driver.findElement(SELECT_MRS).click();
+        LOGGER.trace("Click on SELECT_MRS element, locator: //div[text()='Mrs.']");
     }
     public WebElement selectOldMenu() {
+        LOGGER.trace("Find old select menu element, OLD_SELECT_MENU locator By id: oldSelectMenu");
        return driver.findElement(OLD_SELECT_MENU);
     }
     public void selectMultiselect() {
         driver.findElement(MULTISELECT).click();
+        LOGGER.trace("Click on multiselect menu, MULTISELECT locator: //div[text()='Select...']/..");
         driver.findElement(SELECT_BLUE).click();
+        LOGGER.trace("Click on blue value in multiselect menu, SELECT_BLUE locator: //div[text()='Blue']");
     }
     public WebElement selectAnyCar() {
+        LOGGER.trace("Find select cars element, SELECT_CARS locator By id: cars");
         return driver.findElement(SELECT_CARS);
     }
 
