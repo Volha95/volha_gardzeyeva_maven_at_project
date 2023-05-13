@@ -25,6 +25,8 @@ public class BookingMainPage {
     private final By LANGUAGE = By.xpath("//button[@data-testid='header-language-picker-trigger']");
     private final By LANGUAGE_TOOlTIP = By.xpath("//div[text()='Select your language']");
     private final By REGISTER_BUTTON = By.xpath("//a[@data-testid='header-sign-up-button']");
+    private final By LOGIN_BUTTON = By.xpath("//a[@data-testid='header-sign-in-button']");
+    private final By CAR_RENTAL = By.id("cars");
 
     public void findHotel(String city) {
         driver.findElement(CITY_AREA).sendKeys(city);
@@ -95,5 +97,13 @@ public class BookingMainPage {
     public void registerClick() {
         driver.findElement(REGISTER_BUTTON).click();
         LOGGER.trace("Click on register button, REGISTER_BUTTON locator: //a[@data-testid='header-sign-up-button']");
+    }
+    public void loginClick() {
+        driver.findElement(LOGIN_BUTTON).click();
+        LOGGER.trace("Click on login button, LOGIN_BUTTON locator: //a[@data-testid='header-sign-in-button']");
+    }
+    public void goToCarRent() {
+        driver.findElement(CAR_RENTAL).click();
+        LOGGER.trace("Click on button car rent, CAR_RENTAL locator by id: cars ");
     }
 }
