@@ -1,0 +1,11 @@
+name: YAML Test Suite
+parallel: classes
+tests:
+    -name: Booking tests
+    classes:
+        -BookingTestNGTests
+        -DemoQATestNGTests
+        -W3schoolsTestNGTests
+
+
+

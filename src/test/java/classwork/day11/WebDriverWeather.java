@@ -1,7 +1,7 @@
 package classwork.day11;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +10,8 @@ import java.time.Duration;
 
 
 public class WebDriverWeather {
+    private static final Logger LOGGER = Logger.getLogger(WebDriverWeather.class.getName());
+
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -25,6 +27,6 @@ public class WebDriverWeather {
         String str = el.getAttribute("aria-label");
         String[] array = str.split("Celsius");
         driver.quit();
-        System.out.println(array[0] + " завтра в 12:00");
+        LOGGER.info(array[0] + " завтра в 12:00");
     }
 }

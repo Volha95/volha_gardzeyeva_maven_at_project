@@ -1,23 +1,28 @@
 package tests.demoQA;
 
 import driver.Driver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.Select;
 import pages.demoQA.DemoQASelectPage;
 
-public class DemoQATests {
+
+public class DemoQAJUnitTests {
+    private static final Logger LOGGER = Logger.getLogger(DemoQAJUnitTests.class.getName());
     DemoQASelectPage demoQASelectPage = new DemoQASelectPage();
 
     @Before
     public void openingSelectPage() {
+        LOGGER.info("Test started");
         demoQASelectPage.goToSelectMenu();
     }
 
     @After
     public void closingPage() {
         Driver.destroy();
+        LOGGER.info("Test finished");
     }
 
     @Test
@@ -29,5 +34,6 @@ public class DemoQATests {
         demoQASelectPage.selectMultiselect();
         Select selectCars = new Select(demoQASelectPage.selectAnyCar());
         selectCars.selectByIndex(2);
+        LOGGER.debug("Test passed");
     }
 }

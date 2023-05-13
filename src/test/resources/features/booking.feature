@@ -1,8 +1,5 @@
 Feature: Booking.com tests
 
-#  Background: I am on the main page of the site
-#    Given Open the site
-
   Scenario: max price per night
     Given I open booking site
     When I input the city
